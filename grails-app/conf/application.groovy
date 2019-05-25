@@ -15,8 +15,8 @@ grails.plugin.springsecurity.controllerAnnotations.interceptUrlMap = [
 	[pattern: '/**/css/**',      access: ['permitAll']],
 	[pattern: '/**/images/**',   access: ['permitAll']],
 	[pattern: '/**/favicon.ico', access: ['permitAll']],
-	[pattern: '/api/login',          access: ['permitAll']],
-	[pattern: '/api/logout',        access: ['isFullyAuthenticated()']],
+	[pattern: '/api/login',      access: ['permitAll']],
+	[pattern: '/api/logout',     access: ['isFullyAuthenticated()']],
 	[pattern: '/api/product',    access: ['isFullyAuthenticated()']],
 	[pattern: '/**',             access: ['isFullyAuthenticated()']]
 ]
@@ -27,15 +27,16 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 ]
 
 grails.plugin.springsecurity.rest.login.active = true
+grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.rest.logout.endpointUrl = '/api/logout'
-grails.plugin.springsecurity.rest.login.endpointUrl = '/api/login'
 grails.plugin.springsecurity.rest.token.storage.jwt.secret = 'dsadsad3kj4j32k4j32k4lj232kljskldjklasdjkla2321312'
+grails.plugin.springsecurity.rest.token.storage.jwt.expiration = 3600
 grails.plugin.springsecurity.rest.token.validation.useBearerToken = false
 grails.plugin.springsecurity.rest.token.validation.headerName = 'X-Auth-Token'
-grails.plugin.springsecurity.rest.token.storage.memcached.hosts = 'localhost:11211'
-grails.plugin.springsecurity.rest.token.storage.memcached.username = 'admin'
-grails.plugin.springsecurity.rest.token.storage.memcached.password = 'admin'
-grails.plugin.springsecurity.rest.token.storage.memcached.expiration = 86400
+//grails.plugin.springsecurity.rest.token.storage.memcached.hosts = 'localhost:11211'
+//grails.plugin.springsecurity.rest.token.storage.memcached.username = 'admin'
+//grails.plugin.springsecurity.rest.token.storage.memcached.password = 'admin'
+//grails.plugin.springsecurity.rest.token.storage.memcached.expiration = 86400
 
 //grails.plugin.springsecurity.filterChain.chainMap = [
 //	[pattern: '/assets/**',      filters: 'none'],
