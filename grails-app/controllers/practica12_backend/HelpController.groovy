@@ -12,7 +12,7 @@ class HelpController extends RestfulController {
 	static responseFormats = ['json', 'xml']
 	
     def index() {
-        def i = new Help(help: 'asdasd', completed: true)
+        def i = Help.findAllByCompleted(false)
 
         render i as JSON
     }
