@@ -1,0 +1,10 @@
+import com.practica12.User
+
+model {
+    User user
+}
+
+json {
+    id user.id
+    username user.username
+}

@@ -1,10 +1,12 @@
 package com.practica12
 
+import grails.rest.Resource
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)
+//@Resource()
 class User implements Serializable {
 
 	private static final long serialVersionUID = 1
@@ -13,6 +15,9 @@ class User implements Serializable {
 
 	String username
 	String password
+
+	static hasMany = [department: Department]
+
 	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked

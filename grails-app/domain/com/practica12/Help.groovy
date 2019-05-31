@@ -6,7 +6,7 @@ import grails.rest.Resource
 class Help {
 
     String help
-    boolean completed;
+    boolean completed
 
     static constraints = {
     }

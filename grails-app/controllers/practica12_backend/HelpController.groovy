@@ -1,8 +1,8 @@
 package practica12_backend
 
 import com.practica12.Help
+
 import grails.rest.*
-import grails.converters.*
 
 class HelpController extends RestfulController {
 
@@ -12,8 +12,8 @@ class HelpController extends RestfulController {
 	static responseFormats = ['json', 'xml']
 	
     def index() {
-        def i = Help.findAllByCompleted(false)
+        def i = Help.findAllByCompleted(true)
 
-        render i as JSON
+        respond([message: "OK", status: response.status, data: i])
     }
 }
