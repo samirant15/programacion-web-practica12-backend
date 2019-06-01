@@ -12,9 +12,9 @@ class UserController extends RestfulController {
 
 	static responseFormats = ['json', 'xml']
 
-//    def index() {
-//        def user = User.findAll()
-//
-//        respond([data: user])
-//    }
+    def index() {
+        def user = User.findAll()
+
+        respond([data: user])
+    }
 }

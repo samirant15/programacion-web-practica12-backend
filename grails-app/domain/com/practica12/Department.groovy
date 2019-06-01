@@ -3,7 +3,7 @@ package com.practica12
 import grails.rest.Resource
 
 
-@Resource(uri = '/api/departments')
+//@Resource(uri = '/api/departments')
 class Department {
 
     String name

@@ -1,0 +1,19 @@
+import com.practica12.Department
+import com.practica12.User
+
+model {
+    Department department
+}
+
+//json g.render(id: department.id,
+//        name: department.name,
+//        description: department.description,
+//        [excludes: ['departments']]
+//)
+
+json {
+    id department.id
+    name department.name
+    description department.description
+    userId department.user.id
+}

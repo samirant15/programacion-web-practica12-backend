@@ -1,13 +1,19 @@
 package practica12_backend
 
 import com.practica12.Department
+import grails.rest.RestfulController
 
-class DepartmentController {
+class DepartmentController extends RestfulController {
+
+    DepartmentController() {
+        super(Department)
+    }
+
 	static responseFormats = ['json', 'xml']
 	
     def index() {
-        def departmanets = Department.findAll()
+        def departments = Department.findAll()
 
-        respond([data: departmanets])
+        respond([data: departments])
     }
 }

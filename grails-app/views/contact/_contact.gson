@@ -1,0 +1,16 @@
+import com.practica12.Contact
+
+model {
+    Contact contact
+}
+
+json {
+    id contact.id
+    firstName contact.firstName
+    lastName contact.lastName
+    email contact.email
+    phone contact.phone
+    cellPhone contact.cellPhone
+    address contact.address
+    job contact.job
+}

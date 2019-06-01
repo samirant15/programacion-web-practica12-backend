@@ -10,7 +10,12 @@ class UrlMappings {
         put "/$controller/$id(.$format)?"(action:"update")
         patch "/$controller/$id(.$format)?"(action:"patch")
 
-        "/api/users"(resources: 'user')
+        "/api/users"(resources: 'user') {
+            "/departments"(resources: 'department')
+        }
+        "/api/departments"(resources: 'department')
+        "/api/contacts"(resources: 'contact')
+        "/api/categories"(resources: 'category')
         "/"(controller: 'application', action:'index')
         "500"(view: '/error')
         "404"(view: '/notFound')
