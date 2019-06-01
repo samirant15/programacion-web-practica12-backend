@@ -9,12 +9,12 @@ class Department {
     String name
     String description
 
-    static belongsTo = [user: User, department: Department]
-    static hasMany = [departments: Department]
+    static belongsTo = [user: User]
+    static hasMany = [contacts: Contact]
 
-    static mapping = {
-        departments joinTable: [name: "department_contact", key: 'department_id']
-    }
+//    static mapping = {
+//        contacts joinTable: [name: "department_contact", key: 'department_id']
+//    }
 
     static constraints = {
         name blank: false

@@ -15,5 +15,20 @@ json {
     id department.id
     name department.name
     description department.description
-    userId department.user.id
+    user g.render(department.user, [excludes: ['department', 'password', 'accountLocked', 'accountExpired', 'enabled', 'passwordExpired']])
+    def s = department.contacts.collect {
+        [
+                id: it.id,
+                firstName: it.firstName,
+                lastName: it.lastName,
+                email: it.email,
+                phone: it.phone,
+                cellPhone: it.cellPhone,
+                address: it.address,
+                job: it.job
+        ]
+    }
+
+
+    contacts s
 }

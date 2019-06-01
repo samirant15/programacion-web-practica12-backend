@@ -10,11 +10,12 @@ class Contact {
     String address
     String job
 
+    static belongsTo = Department
     static hasMany = [deparments: Department]
 
-    static mapping = {
-        deparments joinTable: [name: "department_contact", key: 'contact_id']
-    }
+//    static mapping = {
+//        deparments joinTable: [name: "department_contact", key: 'contact_id']
+//    }
 //    String
     static constraints = {
         firstName blank: false

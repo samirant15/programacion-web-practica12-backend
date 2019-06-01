@@ -13,4 +13,5 @@ json {
     cellPhone contact.cellPhone
     address contact.address
     job contact.job
+    departments g.render(contact.deparments, [excludes: ['contacts']])
 }

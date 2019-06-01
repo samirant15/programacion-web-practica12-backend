@@ -16,4 +16,17 @@ class DepartmentController extends RestfulController {
 
         respond([data: departments])
     }
+
+    def show(Department department) {
+
+        if (department == null) {
+            response.setStatus(404)
+            respond([data: null, code: response.status, message: 'Department not found.'])
+            return
+        }
+
+       def getDepartment = Department.findById(department.id)
+
+        respond([data: getDepartment])
+    }
 }

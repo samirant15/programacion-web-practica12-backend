@@ -11,4 +11,10 @@ class ContactController extends RestfulController {
     }
 	static responseFormats = ['json', 'xml']
 
+    def index() {
+        def contacts = Contact.findAll()
+
+        respond([data: contacts])
+    }
+
 }

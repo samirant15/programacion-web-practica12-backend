@@ -1,3 +1,4 @@
+import com.practica12.Contact
 import com.practica12.User
 
 model {
@@ -7,4 +8,5 @@ model {
 json {
     id user.id
     username user.username
+    departments g.render(user.department, [excludes: ['user', 'departments']])
 }
