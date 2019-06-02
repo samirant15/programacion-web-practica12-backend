@@ -13,5 +13,8 @@ json {
     cellPhone contact.cellPhone
     address contact.address
     job contact.job
-    departments g.render(contact.deparments, [excludes: ['contacts']])
+    departments g.render(contact.departments, [excludes: ['contacts']])
+    created_by g.render(contact.user, [excludes: ['department', 'password', 'accountLocked', 'accountExpired', 'enabled', 'passwordExpired', 'contacts']])
+    created_on contact.created_on
+    category g.render(contact.category, [excludes: ['contacts']])
 }

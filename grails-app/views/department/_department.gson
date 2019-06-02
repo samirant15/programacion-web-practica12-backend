@@ -15,7 +15,8 @@ json {
     id department.id
     name department.name
     description department.description
-    user g.render(department.user, [excludes: ['department', 'password', 'accountLocked', 'accountExpired', 'enabled', 'passwordExpired']])
+    user g.render(department.user, [excludes: ['department', 'password', 'accountLocked', 'accountExpired', 'enabled', 'passwordExpired', 'contact', 'category', 'contacts']])
+    created_on department.created_on
     def s = department.contacts.collect {
         [
                 id: it.id,

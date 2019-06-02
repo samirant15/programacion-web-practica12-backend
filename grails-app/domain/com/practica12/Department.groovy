@@ -8,16 +8,14 @@ class Department {
 
     String name
     String description
+    Date created_on;
 
     static belongsTo = [user: User]
     static hasMany = [contacts: Contact]
 
-//    static mapping = {
-//        contacts joinTable: [name: "department_contact", key: 'department_id']
-//    }
-
     static constraints = {
         name blank: false
         description blank: false
+        created_on blank: false
     }
 }

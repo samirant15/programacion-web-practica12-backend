@@ -1,0 +1,12 @@
+import com.practica12.Category
+
+model {
+    Category category
+}
+
+json {
+    id category.id
+    name category.name
+    created_on category.created_on
+    created_by g.render(category.user, [excludes: ['department', 'password', 'accountLocked', 'accountExpired', 'enabled', 'passwordExpired', 'contacts']])
+}

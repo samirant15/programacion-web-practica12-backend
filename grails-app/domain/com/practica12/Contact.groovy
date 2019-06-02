@@ -9,14 +9,13 @@ class Contact {
     String cellPhone
     String address
     String job
+    Date created_on;
+    User user;
+    Category category;
 
-    static belongsTo = Department
-    static hasMany = [deparments: Department]
+    static belongsTo = [User, Department]
+    static hasMany = [departments: Department]
 
-//    static mapping = {
-//        deparments joinTable: [name: "department_contact", key: 'contact_id']
-//    }
-//    String
     static constraints = {
         firstName blank: false
         email blank: false, unique: true
@@ -24,5 +23,8 @@ class Contact {
         cellPhone blank: false
         address blank: false
         job blank: false
+        created_on blank: false
+        user blank: false
+        category blank: false
     }
 }

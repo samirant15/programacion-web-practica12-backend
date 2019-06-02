@@ -16,7 +16,7 @@ class User implements Serializable {
 	String username
 	String password
 
-	static hasMany = [department: Department]
+	static hasMany = [department: Department, contacts: Contact]
 
 	boolean enabled = true
 	boolean accountExpired
