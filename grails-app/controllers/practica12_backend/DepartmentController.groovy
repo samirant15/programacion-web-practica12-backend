@@ -14,7 +14,7 @@ class DepartmentController extends RestfulController {
     def index() {
         def departments = Department.findAll()
 
-[]        respond([data: departments])
+        respond([data: departments])
     }
 
     def show(Department department) {
