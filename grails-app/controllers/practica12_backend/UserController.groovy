@@ -5,6 +5,8 @@ import grails.rest.RestfulController
 
 
 class UserController extends RestfulController {
+    def springSecurityService
+
 //
     UserController() {
         super(User)
@@ -17,4 +19,13 @@ class UserController extends RestfulController {
 
         respond([data: user])
     }
+
+    def auth() {
+        def user = springSecurityService.currentUser
+
+
+        respond([data: user])
+    }
+
+
 }

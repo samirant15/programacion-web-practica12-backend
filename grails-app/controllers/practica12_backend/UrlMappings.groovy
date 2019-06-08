@@ -10,6 +10,8 @@ class UrlMappings {
         put "/$controller/$id(.$format)?"(action:"update")
         patch "/$controller/$id(.$format)?"(action:"patch")
 
+        "/api/users/logged"(controller: 'user', action: 'auth')
+
         "/api/users"(resources: 'user') {
             "/departments"(resources: 'department')
         }
